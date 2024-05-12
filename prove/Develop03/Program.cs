@@ -22,7 +22,7 @@ class Program
             {
             
 
-            scripture.HideRandomWords(toHide); // Hide 3 random words
+            scripture.HideRandomWords(toHide); // Hide increment words
             Console.Clear(); // Clear console
             Console.WriteLine(scripture.GetDisplayText()); // Display the scripture
             toHide++;
