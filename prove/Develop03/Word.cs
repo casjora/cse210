@@ -22,11 +22,12 @@ public class Word
     }
     public void Hide()
     {
-        _isHidden = true;
+        _text = "___";
+        _isHidden=true;
     }
 
     public bool IsHidden()
     {
-        return _isHidden; // Check if the word is hidden
+       return _isHidden;
     }
 }
