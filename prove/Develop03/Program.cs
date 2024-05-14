@@ -14,14 +14,13 @@ class Program
         {
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
-            Console.ReadLine(); // Wait for user input
+           string response = Console.ReadLine(); // Wait for user input
             
-            if (Console.ReadLine().ToLower() == "quit")
+            if (response.ToLower() == "quit")
                 break;
             else
             {
             
-
             scripture.HideRandomWords(toHide); // Hide increment words
             Console.Clear(); // Clear console
             Console.WriteLine(scripture.GetDisplayText()); // Display the scripture
