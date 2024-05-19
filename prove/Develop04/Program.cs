@@ -20,9 +20,22 @@ class Program
                 BreathingActivity brAct = new BreathingActivity();
                 brAct.Run();
             }
-            
+            else if (choice == "2")
+            {
+                ReflectingActivity refAct = new ReflectingActivity();
+                refAct.Run();
+            }
+            else if (choice == "3")
+            {
+                ListingActivity lstAct = new ListingActivity();
+                lstAct.Run();
+            }
+            else
+            {
+                Console.WriteLine("Thanks for playing");
+            }
         }
         
 
     }
-}
+    }
