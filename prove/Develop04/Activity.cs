@@ -14,8 +14,12 @@ public class Activity{
 
     public void DisplayStartingMessage()
     {
-        //Console.Clear();
-        Console.WriteLine($"Welcome to the {_name}");
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_name}\n{_description}");
+        Console.WriteLine("How many seconds do you want the activity to last?");
+        int duration = int.Parse(Console.ReadLine());
+        _duration=duration;
+        Console.WriteLine($"Get ready");
         //Prompt for the duration
         ShowSpinner(5);
     }
@@ -29,15 +33,41 @@ public class Activity{
 
     public void ShowSpinner(int seconds)
     {
-        Console.WriteLine("Spinner!");
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("┌");
+        animationStrings.Add("┐");
+        animationStrings.Add("┘");
+        animationStrings.Add("└");
+
+        
+        DateTime startTime = DateTime.Now;
+        DateTime stopTime = startTime.AddSeconds(_duration);
+        int i =1;
+        while(DateTime.Now<stopTime)
+        {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b  \b");
+            i=i++;
+
+            if(i >= animationStrings.Count)
+            {
+                i=0;
+            }
+        }
+        
+
 
     }
 
     public void ShowCountDown(int seconds)
     {
-        for (int i=1; i<seconds;i++){
-            Console.WriteLine(i);
-            Thread.Sleep(700);
+        for (int j=0; j<seconds;j++){
+            Console.Write("\b \b");
+            Console.Write(j);
+            Console.Write("\b \b");
+            Thread.Sleep(1000);
         }
         Console.WriteLine("Countdown");
     }

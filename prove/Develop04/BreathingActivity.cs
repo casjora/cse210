@@ -1,7 +1,7 @@
 public class BreathingActivity:Activity {
     public BreathingActivity() {
         _name = "Breathing Activity";
-        _description = "Descrip for the act of breathing";
+        _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
 
     }
 
@@ -10,15 +10,21 @@ public class BreathingActivity:Activity {
 
         DateTime startTime = DateTime.Now;
         DateTime stopTime = startTime.AddSeconds(_duration);
-        //Have the user breathe in and out for 5s
-        Console.WriteLine("Breathe In");
-        ShowCountDown(5);
+        
+        do {
+            //Have the user breathe in and out for 5s
+            Console.WriteLine("Breathe In");
+            ShowCountDown(5);
 
 
-        Console.WriteLine("Breathe out");
-        ShowCountDown(5);
+            Console.WriteLine("Breathe out");
+            ShowCountDown(5);
 
-        //Repeat with a loop
+            //Repeat with a loop
+
+        }
+        while
+        (DateTime.Now < stopTime);
 
 
 
