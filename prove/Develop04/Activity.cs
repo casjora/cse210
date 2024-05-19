@@ -21,11 +21,11 @@ public class Activity{
         _duration=duration;
         Console.WriteLine($"Get ready");
         //Prompt for the duration
-        ShowSpinner(5);
+        ShowSpinner(10);
     }
     public void DisplayEndingMessage()
     {
-        Console.WriteLine("Closing Message");
+        Console.WriteLine($"Congrats!! you completed {_name} for {_duration} seconds.");
         ShowSpinner(5);
         //Console.Clear();
 
@@ -41,15 +41,15 @@ public class Activity{
 
         
         DateTime startTime = DateTime.Now;
-        DateTime stopTime = startTime.AddSeconds(_duration);
-        int i =1;
+        DateTime stopTime = startTime.AddSeconds(seconds);
+        int i =0;
         while(DateTime.Now<stopTime)
         {
             string s = animationStrings[i];
             Console.Write(s);
             Thread.Sleep(1000);
-            Console.Write("\b  \b");
-            i=i++;
+            Console.Write("\b \b");
+            i=i+1;
 
             if(i >= animationStrings.Count)
             {
@@ -63,13 +63,13 @@ public class Activity{
 
     public void ShowCountDown(int seconds)
     {
-        for (int j=0; j<seconds;j++){
-            Console.Write("\b \b");
+        for (int j=1; j<=seconds;j++)
+        {
             Console.Write(j);
-            Console.Write("\b \b");
             Thread.Sleep(1000);
-        }
-        Console.WriteLine("Countdown");
+            Console.Write("\b \b");
+            j=j++;
+        }    
     }
 
 }

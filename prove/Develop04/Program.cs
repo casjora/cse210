@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         var choice = "";
-        do
+        while (choice !="4")
         {
             Console.WriteLine("Menu Options:");
             Console.WriteLine("   1. Start Breathing Activity");
@@ -19,11 +19,10 @@ class Program
             {
                 BreathingActivity brAct = new BreathingActivity();
                 brAct.Run();
-                brAct.DisplayStartingMessage();
-                brAct.ShowSpinner(5);
             }
+            
         }
-        while (choice !="4");
+        
 
     }
 }

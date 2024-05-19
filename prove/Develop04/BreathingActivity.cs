@@ -13,11 +13,13 @@ public class BreathingActivity:Activity {
         
         do {
             //Have the user breathe in and out for 5s
-            Console.WriteLine("Breathe In");
+            Console.Write("Breathe In... ");
             ShowCountDown(5);
+            Console.WriteLine();
 
 
-            Console.WriteLine("Breathe out");
+            Console.Write("Breathe out... ");
+            Console.WriteLine();
             ShowCountDown(5);
 
             //Repeat with a loop
