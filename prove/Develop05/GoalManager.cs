@@ -83,10 +83,11 @@ public class GoalManager{
     public void ListGoalDetails(){
         //Loop through the list of goals and display
         //full details
+        int goalNumber=1;
         Console.WriteLine("\nGoal Details:");
         foreach (var goal in _goals)
         {
-            Console.WriteLine(goal.GetDetailsString());
+            Console.WriteLine($"{goalNumber}. {goal.GetDetailsString()}");
         }
     }
 
